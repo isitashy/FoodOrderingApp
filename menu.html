@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menu - The Wing Cafe</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./menu.js"></script>
+    </head>
+
+    <body>
+        <h1>Menu - The Wing Cafe</h1>
+        <Button id="returnBtn"> <img style="width: 20px;" src="./images/backArrow.png" /> <br> Home Page</Button>
+        
+        <div id="menuContainer">
+            <div class="menuContainer">
+                <h2>Meals <hr class="solid"></h2>
+                <div id=1 class="cardItem">
+                    <img class="menuImages" src="./images/wings.jpg" alt="Chicken Wings">
+                    <h4><b>Wings</b></h4>
+                </div>
+                <div id=2 class="cardItem">
+                    <img class="menuImages" src="./images/chickenTenders.jpg" alt="Chicken Tenders">
+                    <h4><b>Chicken Tenders</b></h4> 
+                </div>
+            </div>
+            <div id="sideContainer">
+                <h2>Sides<hr class="solid"></h2>
+                <div id=3 class="cardItem">
+                    <img class="menuImages" src="./images/fries.jpg" alt="Seasoned Fries">
+                    <h4><b>Seasoned Fries</b></h4> 
+                </div>
+                <div id=4 class="cardItem">
+                    <img class="menuImages" src="./images/pickles.jpeg" alt="Fried Pickles">
+                    <h4><b>Fried Dill Pickles</b></h4> 
+                </div>
+
+            </div>
+            <div id="drinksContainer">
+                <h2>Drinks<hr class="solid"></h2>
+                <div id=5 class="cardItem">
+                    <img class="menuImages" src="./images/water.jpg" alt="Bottled Water">
+                    <h4><b>Water</b></h4> 
+                </div>
+                <div id=6 class="cardItem">
+                    <img class="menuImages" src="./images/softdrinks.jpg" alt="Soft Drinks">
+                    <h4><b>Soft Drink</b></h4> 
+                </div>
+            
+            </div>
+        </div>
+
+        <div id="cartContainer">
+            <h2>Hello, </h2>
+            <hr/>
+            <h3>Order Summary</h3>
+            <p>Click "Submit Order" when you are done.</p>
+            <div id="orderSummary">
+                <p id="orderMessage">Your order list is empty.</p>
+            </div>
+            <button id="submitOrder">Submit Order</button>
+            <button id="cancelOrder">Cancel Order</button>
+            
+        </div>
+
+        <!-- Modal Templates --> 
+        <div id="initialModal" class="modal0">
+            <!-- Modal content -->
+            <div class="modal-content0" style="text-align: center;">
+                <span id="cancel" >&times;</span>
+                <h2>Enter your name to begin an order.</h2>
+                <form id="initialForm">
+                    <label for="name">Name on Order: &nbsp;</label>
+                    <input type="text" id="name" name="name"><br><br>
+                </form>
+
+                <button id="submit0" style="background-color: #3cb371; font-size: medium; padding: 5px;">Begin</button>
+            </div>
+        </div>
+
+        <div id="wingModal" class="modal1">
+            <!-- Modal content -->
+            <div class="modal-content1">
+                <span class="close1">&times;</span>
+                <div id="wingsContainer">
+                    <h2>Wing Meal</h2>
+                    <p>Choice of 10 or 20 wings served with celary and carrots. </p>
+                    
+                    <h3>Wings:</h3>
+                    <form id="wingRadio">
+                        <input type="radio" id="wing1" name="wings" value="10 pcs Wings">
+                            <label for="wing1">10 wings</label><br>
+                        <input type="radio" id="wing2" name="wings" value="20 pcs Wings">
+                            <label for="wing2">20 wings</label><br>
+                    </form>
+                    
+                    <div id="sauceContainer">
+                        <h4>*Choose wing quantity.</h4>
+                        <form id="sauceOptions">
+                            <input type="checkbox" id="sauce1" name="sauce" value="Plain">
+                                <label for="sauce1"> Plain </label><br>
+                            <input type="checkbox" name="sauce" value="Medium Buffalo">
+                                <label for="sauce2"> Medium Buffalo </label><br>
+                            <input type="checkbox" name="sauce" value="Hot Buffalo">
+                                <label for="sauce3"> Hot Buffalo </label><br>
+                            <input type="checkbox" name="sauce" value="Teriyaki">
+                                <label for="sauce4"> Teriyaki </label><br>
+                            <input type="checkbox" name="sauce" value="Lemon Pepper">
+                                <label for="sauce5"> Lemon Pepper </label><br>
+                            <input type="checkbox" name="sauce" value="Garlic Parmesan">
+                                <label for="sauce6"> Garlic Parmesan </label><br>
+                            <input type="checkbox" name="sauce" value="BBQ">
+                                <label for="sauce7"> BBQ </label><br>
+                        </form>
+                    </div>
+                    
+                    <button id="submit1" style="background-color: #3cb371;">Add to Order</button>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <div id="tenderModal" class="modal2">
+            <!-- Modal content -->
+            <div class="modal-content2">
+                <span class="close2">&times;</span>
+                <div>
+                    <h2>Chicken Tenders Meal</h2><br />
+                    <p>5 pcs chicken tenders served with texas toast.</p>
+                    
+                    <br /><br /><br />
+                    <button id="submit2" style="background-color: #3cb371;">Add to Cart</button>
+                </div> 
+            </div>
+        </div>
+
+        <div id="friesModal" class="modal3">
+            <!-- Modal content -->
+            <div class="modal-content3">
+                <span class="close3">&times;</span>
+                <h2>Seasoned Fries</h2><br />
+                <p>French Fries seasoned with special house blend.</p>
+                <br /><br /><br />
+                <button id="submit3" style="background-color: #3cb371;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="picklesModal" class="modal4">
+            <!-- Modal content -->
+            <div class="modal-content4">
+                <span class="close4">&times;</span>
+                <h2>Fried Dill Pickles</h2>
+                <br />
+                <p>Dill pickles fried in special house mix.</p>
+                <br /><br /><br />
+                <button id="submit4" style="background-color: #3cb371;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="waterModal" class="modal5">
+            <!-- Modal content -->
+            <div class="modal-content5">
+                <span class="close5">&times;</span>
+                <h2>Bottled Water</h2><br />
+                <p> 16oz Water Bottle </p>
+                <br /><br /><br />
+                <button id="submit5" style="background-color: #3cb371;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="sodaModal" class="modal6">
+            <!-- Modal content -->
+            <div class="modal-content6">
+                <span class="close6">&times;</span>
+                <h2>Bottled Soft Drink</h2><br />
+                <label for="Drinks">Choose a drink:</label>
+                <select name="drinks" id="drinks">
+                    <option value="Coke">Coke</option>
+                    <option value="Diet Coke">Diet Coke</option>
+                    <option value="Iced Tea">Iced Tea</option>
+                </select>
+
+                <br /><br /><br />
+                <button id="submit6" style="background-color: #3cb371;">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="modal7">
+            <!-- Modal content -->
+            <div class="modal-content7" style="text-align: center;">
+                <h2 style="text-align: center;">Are you sure you want to cancel?</h2>
+                <br />
+                <button id="submit7" style="background-color: #3cb371; margin: 10px;">Yes</button>
+                <button id="submit8" style="background-color: #FF4C4C; margin: 10px;">No</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>
